@@ -47,7 +47,7 @@ price_pipe = Pipeline(
         ('categorical_imputer', pp.CategoricalImputer(variables=CATEGORICAL_VARS)),
         ('numerical_imputer', pp.NumericalImputer(variables=NUMERICAL_VARS_WITH_NA)),
         ('temporal_variables', pp.TemporalVariableEstimator(variables=TEMPORAL_VARS, reference_variable=TEMPORAL_VARS)),
-        ('rare_label_encoder', pp.RareLabelCategoryEncoder(tol=0.01, variables=CATEGORICAL_VARS)),
+        ('rare_label_encoder', pp.RareLabelCategoricalEncoder(tol=0.01, variables=CATEGORICAL_VARS)),
         ('categorical_encoder', pp.CategoricalEncoder(variables=CATEGORICAL_VARS)),
         ('log_transformer', pp.LogTransformer(variables=NUMERICAL_LOG_VARS)),
         ('drop_features', pp.DropUnecessaryFeatures(variables_to_drop=DROP_FEATURES)),
