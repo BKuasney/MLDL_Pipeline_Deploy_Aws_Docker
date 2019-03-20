@@ -56,6 +56,8 @@ def run_training() -> None:
     y_train = np.log(y_train)
     y_test = np.log(y_test)
 
+    # when i call "fit" i call the entire pipeline to run
+    # the entire pipeline calls the function on "preprocessors" and save the model
     pipeline.price_pipe.fit(X_train[FEATURES], y_train)
 
     save_pipeline(pipeline_to_persist = pipeline.price_pipe)
